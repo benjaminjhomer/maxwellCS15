@@ -1,0 +1,27 @@
+README TETRIS
+
+Overview:
+	My Tetris has 5 classes. They are:
+		App:
+			This class displays all the graphical elements and contains the class PaneOrganizer.
+		 	It displays the window.
+		 PaneOrganizer:
+		 	This class is responsible for organizing all the Panes on the screen
+ 			graphically. It has access to the following methods: getRoot, createMenuPane,
+ 			setScore, pauseLabel, addGameOver,createGamePane. It has two inner classes,
+			QuitHandler and Restart Handler.
+		GameLogic:
+			This class handles all logic for the game. Its methods are: setupTimeline,
+	 		moveShapeDown, clearRows, and getScore. It has two inner classes, TimHandler
+	 		and KeyHandler.
+	 	Shape:
+	 		This class makes 4 Blocks into 7 random shapes. Its methods are:
+ 			checkValidity, moveDown, moveSidewards, rotate, and addToBlockPos.
+		Block:
+			Wrapper for the _rect. Has three getters, getNode, getXIndex, and getYIndex.
+Design Choices:
+	In my Tetris, I decided to use a GridPane for easy expandability and because it 
+	corresponded very easily with my logical position array. It was also cleaner with 
+	the math and positioning.
+Known Bugs:
+	None.

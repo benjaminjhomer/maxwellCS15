@@ -1,0 +1,31 @@
+LiteBrite README
+
+OVERVIEW:
+My LiteBrite has 2 classes, LiteBox and ColorPalette. They interact in the
+following way.
+        -ColorPalette creates the boxes at the bottom that allow you to select
+         the color you want to place down. It stores this variable as
+         _currentColor and has a getter and mutator method for it. It also is
+         associated with LiteBox.
+        -LiteBox creates the grid and has a method that places the LitePegs. It
+         uses the getter method in ColorPalette to see which color the user has
+         picked to determine the color of the peg. It is also associated with
+         ColorPalette.
+
+DESIGN CHOICES:
+
+
+KNOWN BUGS:
+Terminal gives the error "Prism-ES2 Error : GL_VERSION (major.minor) = 1.4"
+Rarely, program will start but no window shows up.
+
+QUESTIONS:
+- Which two classes are associated?
+
+  LiteBox and ColorPalette are associated because LiteBrite needs to know about
+  an instance variable of the instance of ColorPalette that created it.
+
+- Name one getter method and one setter method used in your program.
+  A getter method I used is getColor() in ColorPalette which returns _currentColor.
+  A setter method I used is setColor() in ColorPalette which sets _currentColor
+  to which ever color the user last picked.

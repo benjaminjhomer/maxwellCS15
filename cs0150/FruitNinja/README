@@ -1,0 +1,41 @@
+FruitNinja README
+
+OVERVIEW:
+    My FruitNinja has 9 classes. A brief description of each is described below
+      - App
+        Instantiates top-level class of FruitNinja. Starts game and organizes
+        the javaFX.
+      - FruitNinja
+        This class is the top level class. It is a subclass of CS15 Game. It
+        handles what happens when the blade hits an object, bomb or fruit. It
+        also control the likelyhood of each fruit launch. Contains all instances
+        of fruit.
+      - Fruit
+        This is a subclass of CSFruit and super class of Apple, Pear, Peach, and
+        Lemon. It is an abstract class that implements Choppable.
+      - Apple
+        Subclass of Fruit. Is contained by FruitNinja. This has a score value of
+        1. launchItem() instantiates it. 
+      - Pear
+        Subclass of Fruit. Is contained by FruitNinja. This has a score value of
+        3. launchItem() instantiates it.
+      - Peach
+        Subclass of Fruit. Is contained by FruitNinja. This has a score value of
+        4. launchItem() instantiates it.
+      - Lemon
+        Subclass of Fruit. Is contained by FruitNinja. This has a score value of
+        2. launchItem() instantiates it.
+      - Bomb
+        This is a subclass of CSBomb. It is contained within FruitNinja.
+      - Choppable
+        Bomb and Fruit both implement Choppable. All Choppables can use getValue()
+        and bombOrNoBomb.
+
+DESIGN CHOICES:
+    In onBladeContact, I need check to see if the last object touched with the
+    blade is a bomb or not. This variable is of declared type Choppable because
+    both bombs and fruits are Choppable. However, if it is a bomb, it needs to
+    access explode(), so I get the last touched object and declare it as type
+    bomb so I can use explode().
+KNOWN BUGS:
+    None.

@@ -1,0 +1,29 @@
+README DoodleJump
+
+Overview:
+	My DoodleJump has 5 classes, App, PaneOrganizer, Game, Doodle, and Ledge. They are outlined down below.
+		App:
+			This class displays all the graphical elements and contains the class PaneOrganizer.
+		 	It displays the window.
+		PaneOrganizer:
+			This class sets up all graphical elements and organizes them within the _root. It has 
+			access to getRoot(), createBottomPane(),createGamePane(),getters for the instance 
+			variables needed in Game. It contains an instance of Game, Doodle, and the Ledges.
+		Game:
+			This class handles all the logic of the game. Its inner classes are KeyHandler, 
+ 			TimeHandler, and RestartHandler. Its methods are setInstVar(), setupTimeline(), 
+ 			and two getters for KeyHandler and TimeHandler.
+ 		Doodle:
+ 			This class has all the information needed to make a Doodle. Its methods are setPostion(), 
+			getYPosition(), getXPosition(),getShapes(), setVel(), updateVel(), updateLoc(), getVel(),
+			and remove().
+		Ledge:
+			This class has all the information needed to make a Ledge. Its methods are setPosition(), 
+			getShapes(), getYPosition(), and getXPosition().
+
+Design Choices:
+	In my DoodleJump, the PaneOrganizer handles displaying all graphically elements while the Game
+	handles updating these elements. 
+	
+Known Bugs:
+	None.

@@ -1,0 +1,69 @@
+README PACMAN
+
+Overview:
+	My Pacman has 10 classes, two types of enums, and one interface.
+	
+	CLASSES
+		App: 
+		This is where the app starts. It contains a PaneOrganizer.
+		BFSQueue:
+		This is a wrapper for a LinkedList. It is contained within GameLogic and is created 
+		every time a new BFS search is done.
+		Constants:
+		This hold all constants. 
+		Dot:
+		This is a wrapper class for a small circle that allows it to know what type of 
+		the circle is supposed to represent (Dot). It is contained within GameLogic and 
+		is associated with it's respective Tile.
+		Energizer:
+		This is a wrapper class for a bigger circle that allows it to know what type of 
+		the circle is supposed to represent (Energizer). It is contained within GameLogic 
+		and is associated with it's respective Tile.
+		GameLogic:
+		This class deals with all the logic and board setup. It has two private classes within 
+		it. It contains multiple instances of tiles, ghosts, dots, and energizers. It also 
+		contained an instance of BFSQueue and GhostPenQ.
+		Ghost:
+		This class is a wrapper for a rectangle that knows it direction its going in. It is 
+		contained within GameLogic and controlled by the BFS and the TimeHandler within it.
+		GhostPenQ:
+		This is a wrapper for a LinkedList. It is contained within GameLogic and is 
+		responsible for release the Ghosts at a set time interval.
+		Pacman:
+		This class is a wrapper for a rectangle that knows it direction its going in. It is 
+		contained within GameLogic and controlled by the KeyHandler within it.
+		PaneOrganizer:
+		This class organizes the different Panes on the screen. It contained the GameLogic 
+		class and is contained within the App class.
+		Tile:
+		This is a wrapper class for a rectangle that has a list of Interactables that are 
+		overlapping with it on the screen. It also knows what type of tile it it (wall 
+		versus tile).
+		
+	ENUMS
+		Consumable:
+		There are three types of consumables: DOT, ENERGIZER, and GHOST.
+		Direction:
+		There are five types of directions: UP, DOWN, LEFT, RIGHT, and NONE
+		
+	INTERFACES
+		Interactable:
+		There are three classes that implement this class: Ghost, Dot, and Energizer. These classes
+		must have three methods: getNode(), isType(), and interacted().
+Design Choices:
+	Use of GridPane:
+		GridPane was a much easier and simpler way to organize my code. It allowed me to not 
+		have any multipliers and for me to reference my _mapstate within my GameLogic class very 
+		efficiently because they both used the same indices. 
+	Use of interface:
+		In order for my Tile arrayLists to accept Ghost, Dot, and Energizer, they either needed to
+		have the same parent or in the same interface. I chose an interface because they would have
+		to implement interacted() differently.
+	Mode Switching:
+		I used an if statement to do mode switching so I can only use one TimeHandler. By putting the
+		Frightened Mode first in the if statement, it will override the other two modes. 
+	Using counters for modes and ghost pen instead of different TimeHandlers
+		I felt it was cleaner to have counters that way if in the future one wanted to have a certain 
+		mode be longer or shorter based on a game action it could be easy to implement by changing the counter.
+Known Bugs:
+	None.

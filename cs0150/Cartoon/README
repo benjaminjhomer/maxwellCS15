@@ -1,0 +1,33 @@
+README Cartoon
+
+OVERVIEW: My Cartoon has six classes. Below is their descriptions and how they intersect.
+			- App
+				Instantiates PaneOrganizers and sets and shows the stage. Has a start method
+			- PaneOrganizer
+				This class contains Cartoon and creates a quit button. It also has a QuitHandler 
+				which looks for when said quit button is pressed
+			- Cartoon
+				This class contains the space ship, the enemies, and the lasers. It is responsible for creating all the panes which
+				are organized in the PaneOrganizer. It also has a private class that looks for arrow key presses and if the space
+				bar is hit. This moves the spaceship or spawns lasers.
+			- Enemy
+				This class creates the enemy and moves them down the screen. It has methods to do so. It is contained by Cartoon.
+			- SpaceShip
+				This class creates a spaceship in the bottom pane. It is controlled through a private class in Cartoon. It is 
+				contained by Cartoon.
+			- Lasers
+				This class creates the lasers and moves them up the screen. It has methods to do so and knows about the location 
+				of the spaceship at the time it is made.It is contained by Cartoon.
+			- CONSTANTS
+				Has on the constants for all the classes.
+				
+		The actions you can do in my program are the following:
+			- Left and right arrow keys move the spaceship respectively.
+			- Space bar fires a laser from the front of the ship.
+				
+DESIGN CHOICES: 
+
+KNOWN BUGS: I couldn't manage to get the lasers to register hitting the spaceships. I think I need to use arraylists but since 
+			we just learned that I couldn't get it to work.
+				
+			
